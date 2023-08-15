@@ -2,6 +2,7 @@
 
 namespace LaravelJsonStorage\Models;
 
+use Illuminate\Support\Str;
 use LaravelJsonStorage\Exceptions\PageNotFoundException;
 use LaravelJsonStorage\Exceptions\ServerErrorException;
 
@@ -12,7 +13,7 @@ class BaseJsonModel
      * '/' at the end of the title
      * */
     protected $dataDir = '';
-    protected $dataPath = storage_path( 'data/');
+    protected $dataPath = storage_path('data/');
 
     public function filePath($name)
     {
@@ -23,8 +24,7 @@ class BaseJsonModel
 
     public function fileNameGenerate()
     {
-        $bytes = random_bytes(10);
-        return bin2hex($bytes);
+        return Str::uuid();
     }
 
     /**
@@ -66,11 +66,9 @@ class BaseJsonModel
         }
     }
 
-    public function create(array $data, $fileName = '')
+    public function create(array $data)
     {
-        if ($fileName === '') {
-            $fileName = $this->fileNameGenerate();
-        }
+        $fileName = $this->fileNameGenerate();
         $jsonData = json_encode($data, JSON_PRETTY_PRINT);
         file_put_contents($this->filePath($fileName), $jsonData);
         return $fileName;
