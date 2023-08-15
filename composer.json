@@ -1,0 +1,39 @@
+{
+    "name": "ydigitalteam/json-storage",
+    "description": "Save data on json files on laravel frameworks",
+    "type": "github",
+    "license": "MIT",
+    "homepage": "https://github.com/ydigitalteam/laravel-json-storage",
+    "autoload": {
+        "psr-4": {
+            "JsonStorage\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Yurii Bevzenko",
+            "email": "drammer.g@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "php": "~8.1",
+        "fakerphp/faker": "^v1.23.0",
+        "illuminate/console": "v10.*",
+        "illuminate/database": "v10.*",
+        "illuminate/support": "v10.*",
+        "laravel/framework": "v10.11.0",
+        "orchestra/testbench": "^v8.5.6",
+        "phpunit/phpunit": "^10.2.3",
+        "squizlabs/php_codesniffer": "^3.7.2"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
+    }
+}
