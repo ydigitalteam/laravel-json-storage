@@ -1,11 +1,11 @@
 <?php
 
-namespace LaravelJsonStorage;
+namespace LaravelJsonStorage\Models;
 
 use LaravelJsonStorage\Exceptions\PageNotFoundException;
 use LaravelJsonStorage\Exceptions\ServerErrorException;
 
-class BaseModel
+class BaseJsonModel
 {
     /**
      * We specify the name of the folder for saving model files with
