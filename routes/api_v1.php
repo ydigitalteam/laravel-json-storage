@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('api')
     ->prefix('api/v1')
     ->group(function () {
-        Route::get('/domains', [\JsonStorage\Http\Controllers\Api\V1\DomainController::class, 'index']);
-        Route::get('/domains/{id}', [\JsonStorage\Http\Controllers\Api\V1\DomainController::class, 'show']);
+        Route::get('/domains', [\LaravelJsonStorage\Http\Controllers\Api\V1\DomainController::class, 'index']);
+        Route::get('/domains/{id}', [\LaravelJsonStorage\Http\Controllers\Api\V1\DomainController::class, 'show']);
     });

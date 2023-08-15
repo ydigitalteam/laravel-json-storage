@@ -1,8 +1,8 @@
 <?php
 
-namespace JsonStorage\Models;
+namespace LaravelJsonStorage\Models;
 
-use JsonStorage\BaseModel;
+use LaravelJsonStorage\BaseModel;
 
 class Domain extends BaseModel {
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace JsonStorage;
+namespace LaravelJsonStorage;
 
-use JsonStorage\Exceptions\PageNotFoundException;
-use JsonStorage\Exceptions\ServerErrorException;
+use LaravelJsonStorage\Exceptions\PageNotFoundException;
+use LaravelJsonStorage\Exceptions\ServerErrorException;
 
 class BaseModel
 {
@@ -90,7 +90,7 @@ class BaseModel
             return $newFileData;
 
         } catch (\Exception $exception) {
-            new ServerErrorException($exception->getMessage());
+            throw new ServerErrorException($exception->getMessage());
         }
     }
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace JsonStorage\Http\Controllers\Api\V1;
+namespace LaravelJsonStorage\Http\Controllers\Api\V1;
 
 use Illuminate\Http\Request;
-use JsonStorage\Models\Domain;
+use LaravelJsonStorage\Models\Domain;
 
 class DomainController
 {

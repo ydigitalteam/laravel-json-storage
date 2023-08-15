@@ -6,7 +6,7 @@
     "homepage": "https://github.com/ydigitalteam/laravel-json-storage",
     "autoload": {
         "psr-4": {
-            "JsonStorage\\": "src/"
+            "LaravelJsonStorage\\": "src/"
         },
         "files": [
             "helpers/helpers.php"

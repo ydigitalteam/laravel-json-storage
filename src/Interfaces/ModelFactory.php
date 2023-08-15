@@ -1,6 +1,6 @@
 <?php
 
-namespace JsonStorage\Interfaces;
+namespace LaravelJsonStorage\Interfaces;
 
 interface ModelFactory
 {

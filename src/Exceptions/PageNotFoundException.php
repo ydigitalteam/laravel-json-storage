@@ -1,6 +1,6 @@
 <?php
 
-namespace JsonStorage\Exceptions;
+namespace LaravelJsonStorage\Exceptions;
 
 use Exception;
 use Illuminate\Http\Request;

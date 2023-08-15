@@ -1,15 +1,13 @@
 <?php
-declare(strict_types=1);
 
-namespace JsonStorage\Providers;
+namespace LaravelJsonStorage\Providers;
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
-class JsonStorageServiceProvider extends ServiceProvider
+class LaravelJsonStorageServiceProvider extends ServiceProvider
 {
     const PACKAGE_VENDOR = 'ydigitalteam';
-    const PACKAGE_NAME = 'jsonstorage';
+    const PACKAGE_NAME = 'laraveljsonstorage';
 
     const COMMANDS = [
         //
@@ -43,7 +41,7 @@ class JsonStorageServiceProvider extends ServiceProvider
 //        });
     }
 
-    private function getPackagePath(): string
+    private function getPackagePath()
     {
         return realpath(__DIR__ . '/www');
     }
