@@ -1,5 +1,5 @@
 {
-    "name": "ydigitalteam/json-storage",
+    "name": "ydigitalteam/laravel-json-storage",
     "description": "Save data on json files on laravel frameworks",
     "type": "github",
     "license": "MIT",
