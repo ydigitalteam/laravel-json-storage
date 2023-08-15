@@ -13,7 +13,7 @@ class BaseJsonModel
      * '/' at the end of the title
      * */
     protected $dataDir = '';
-    protected $dataPath = storage_path('data/');
+    protected $dataPath = __DIR__ . '/../../storage/data/';
 
     public function filePath($name)
     {
