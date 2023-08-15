@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/domains', function (Request $request) {
-    return 'hello';
-});
+Route::middleware('api')
+    ->prefix('api/v1')
+    ->group(function () {
+        Route::get('/domains', [\JsonStorage\Http\Controllers\Api\V1\DomainController::class, 'index']);
+        Route::get('/domains/{id}', [\JsonStorage\Http\Controllers\Api\V1\DomainController::class, 'show']);
+    });

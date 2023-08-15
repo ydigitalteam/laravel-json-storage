@@ -22,10 +22,7 @@ class JsonStorageServiceProvider extends ServiceProvider
     {
         // Registering package commands
         $this->commands(self::COMMANDS);
-//        $this->loadRoutesFrom(__DIR__ . '/../../routes/api_v1.php');
-        Route::middleware('api')
-            ->prefix('api/v1')
-            ->group(__DIR__ . '/../../routes/api_v1.php');
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/api_v1.php');
         if ($this->app->runningInConsole()) {
             //
         }
