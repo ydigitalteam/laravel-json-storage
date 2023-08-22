@@ -13,7 +13,7 @@ class BaseJsonModel
      * '/' at the end of the title
      * */
     protected $dataDir = '';
-    protected $dataPath ;
+    protected $dataPath;
 
     public function __construct()
     {
@@ -23,7 +23,7 @@ class BaseJsonModel
     public function filePath($name)
     {
         return ($this->dataDir !== '')
-            ? $this->dataPath . $this->makeDirectory($this->dataDir) . '/' . $name . '.json'
+            ? $this->dataPath . $this->makeStore($this->dataDir) . '/' . $dataDir . '.json'
             : $this->dataPath . $name . '.json';
     }
 
@@ -74,9 +74,10 @@ class BaseJsonModel
     public function create(array $data)
     {
         $fileName = $this->fileNameGenerate();
-        $jsonData = json_encode($data, JSON_PRETTY_PRINT);
+        $modelData =  array_merge(['uuid' => $fileName], $data);
+        $jsonData = json_encode($modelData, JSON_PRETTY_PRINT);
         file_put_contents($this->filePath($fileName), $jsonData);
-        return $fileName;
+        return collect($modelData);
     }
 
     public function update($fileName, array $data)
@@ -114,6 +115,14 @@ class BaseJsonModel
     {
         $this->createDirectoryTree($this->dataPath . $dataDir);
         return $dataDir;
+    }
+
+    public function makeStore($storeName)
+    {
+       $file = file_exists($this->dataPath . '/' . $storeName);
+       if(!ile_exists($this->dataPath . '/' . $storeName)) {
+
+       }
     }
 
     public function createDirectoryTree($path)
